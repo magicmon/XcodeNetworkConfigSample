@@ -10,9 +10,15 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet private var serverLabel: UILabel!
+    @IBOutlet private var urlLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        serverLabel.text = NetworkConfig.shared.host.rawValue
+        urlLabel.text = NetworkConfig.shared.serverDomain
     }
 
     override func didReceiveMemoryWarning() {
